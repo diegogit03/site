@@ -12,36 +12,18 @@
     <section class="container" style="padding: 5rem 0;">
         <h3 class="text-center mb-4">Portfólio</h3>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="https://github.com/diegogit03/pied-piper/raw/master/images/screenshot.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Pied Piper</h5>
-                    <p class="card-text">Um sistema de armazenamento de arquivos em nuvem</p>
-                    <a href="#" class="btn btn-primary">Saiba mais</a>
+            @foreach ($projects as $project)
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="{{ asset('/storage/' . $project->image_filename) }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $project->title }}</h5>
+                            <p class="card-text">{{ $project->description }}</p>
+                            <a href="#" class="btn btn-primary">Saiba mais</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="https://github.com/diegogit03/pied-piper/raw/master/images/screenshot.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Pied Piper</h5>
-                    <p class="card-text">Um sistema de armazenamento de arquivos em nuvem</p>
-                    <a href="#" class="btn btn-primary">Saiba mais</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="https://github.com/diegogit03/pied-piper/raw/master/images/screenshot.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Pied Piper</h5>
-                    <p class="card-text">Um sistema de armazenamento de arquivos em nuvem</p>
-                    <a href="#" class="btn btn-primary">Saiba mais</a>
-                </div>
-              </div>
-            </div>
+                @endforeach
         </div>
     </section>
 @endsection

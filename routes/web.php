@@ -1,10 +1,13 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    $projects = Project::all();
+
+    return view('index', compact('projects'));
 })->name('home');
 
 Route::get('/blog', function () {
