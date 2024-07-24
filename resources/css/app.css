@@ -1,0 +1,23 @@
+.hero {
+    width: 100vw;
+    height: 400px;
+    background-image: linear-gradient(to bottom, transparent, #000), url('http://localhost:3333/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+pre {
+    padding: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+    color: white;
+}
+
+blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgb(51, 54, 255);
+    color: rgb(94, 94, 94);
+}

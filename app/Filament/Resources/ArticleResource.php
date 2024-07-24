@@ -39,7 +39,7 @@ class ArticleResource extends Resource
                         ->required(),
                     RichEditor::make('content')
                         ->required(),
-                    Select::make('Status')
+                    Select::make('status')
                         ->options([
                             'draft' => 'Rascunho',
                             'published' => 'Publicado'
