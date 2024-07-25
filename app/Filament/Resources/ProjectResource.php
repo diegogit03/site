@@ -22,7 +22,7 @@ class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-bolt';
 
     public static function form(Form $form): Form
     {
@@ -45,6 +45,8 @@ class ProjectResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('sort')
+            ->reorderable('sort')
             ->columns([
                 TextColumn::make('title'),
             ])
