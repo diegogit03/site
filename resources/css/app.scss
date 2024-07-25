@@ -1,3 +1,9 @@
+$theme-colors: (
+  "primary": #6C63FF,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .hero {
     width: 100vw;
     height: 400px;
@@ -9,15 +15,19 @@
     justify-content: center;
 }
 
-pre {
+/* pre {
     padding: 1rem;
     background-color: #1f1f1f;
     border-radius: 1rem;
     color: white;
-}
+} */
 
 blockquote {
     padding-left: 1rem;
     border-left: 2px solid rgb(51, 54, 255);
     color: rgb(94, 94, 94);
+}
+
+.format-article img {
+    width: 100%;
 }

@@ -12,7 +12,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/blog', function () {
-    $articles = Article::where('status', 'published')->get();
+    $articles = Article::where('status', 'published')->paginate(9);
 
     return view('blog', compact('articles'));
 })->name('blog');

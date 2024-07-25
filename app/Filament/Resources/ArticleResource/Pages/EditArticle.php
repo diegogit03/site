@@ -16,4 +16,11 @@ class EditArticle extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['content'] = str_replace(['<pre>', '</pre>'], ['<pre><code>', '</code></pre>'], $data['content']);
+
+        return $data;
+    }
 }

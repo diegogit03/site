@@ -1,16 +1,18 @@
 @extends('layout')
 
 @section('content')
-    <div class="container" style="padding: 5rem 0">
+    <div class="container" style="padding: 5rem 1rem">
         <h2>{{ $article->title }}</h2>
 
         <img class="w-100 my-4" style="border-radius: 1rem" src="{{ asset('/storage/' . $article->thumb_filename) }}" alt="">
 
-        <div class="mb-4">
+        <div class="mb-4 format-article">
             {!! $article->content !!}
         </div>
 
-        <form action="{{ route('comments.store', ['article' => $article->id]) }}" method="post">
+        <h3 class="text-center mb-4">Comentários</h3>
+
+        <form class="mb-4" action="{{ route('comments.store', ['article' => $article->id]) }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="author">Autor</label>
@@ -23,10 +25,22 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
 
-        <ul>
+        <div>
             @foreach ($article->comments as $comment)
-                <li>{{ $comment->content }}</li>
+                <div style="
+                    padding: 1rem;
+                    display: flex;
+                    gap: 1.5rem
+                ">
+                    <img style="width: 3.5rem; height: 3.5rem" src="https://avatar.iran.liara.run/username?username={{ $comment->author }}" alt="">
+                    <div>
+                        <strong>{{ $comment->author }}</strong>
+                        <p>
+                            {{ $comment->content }}
+                        </p>
+                    </div>
+                </div>
             @endforeach
-        </ul>
+        </div>
     </div>
 @endsection
