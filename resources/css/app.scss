@@ -4,23 +4,14 @@ $theme-colors: (
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.hero {
-    width: 100vw;
-    height: 400px;
-    background-image: linear-gradient(to bottom, transparent, #000), url('http://localhost:3333/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn-primary {
+    color: white !important;
+    font-weight: bold !important;
 }
 
-/* pre {
-    padding: 1rem;
-    background-color: #1f1f1f;
-    border-radius: 1rem;
-    color: white;
-} */
+.nav-link.active {
+    border-bottom: 0.25rem solid #6C63FF;
+}
 
 blockquote {
     padding-left: 1rem;
@@ -30,4 +21,56 @@ blockquote {
 
 .format-article img {
     width: 100%;
+}
+
+.social-links {
+    a {
+        :hover {
+            color: #a7a2ff;
+        }
+
+        transition: 0.5s;
+        cursor: pointer;
+    }
+}
+
+.fade-text {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.fade-text img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fade-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    transition: opacity 0.5s;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.fade-text:hover::after {
+    opacity: 0.8;
 }
