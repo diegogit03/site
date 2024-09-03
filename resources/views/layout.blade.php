@@ -5,51 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Diego Henrique de Oliveira Madero</title>
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-none  py-3" style="margin-bottom: 3rem">
-        <div class="container d-flex align-items-center">
-          <a class="navbar-brand"  style="width: 1.5rem" href="{{ route('home') }}">
-            <img class="w-100" src="{{ asset('logo.png') }}" alt="">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} fw-bold" aria-current="page" href="{{ route('home') }}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('blog') || request()->routeIs('blog.article') ? 'active' : '' }} fw-bold" href="{{ route('blog') }}">Blog</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    <main>
-        @yield('content')
-    </main>
-    <footer class="bg-primary text-white" style="padding: 5rem 0">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <h4>Redes Sociais</h4>
-                    <div class="d-flex social-links" style="gap: 1rem">
-                        <a href="https://www.github.com/diegogit03" class="text-white fs-2" target="_blank"><i class="bi bi-github"></i></a>
-                        <a class="text-white fs-2" target="_blank"><i class="bi bi-instagram"></i></a>
+<body class="bg-dark text-white">
+    <header class="px-5 md:px-20 flex justify-between items-center py-6 border-b-divisor border-b-2">
+        <a href="{{ route('home') }}" style="width: 31px; height: 35px">
+            <img src="{{ asset('logo.png') }}" class="w-full" alt="">
+        </a>
+
+        <ul class="md:flex hidden gap-3">
+            <li><a href="" class="hover:text-primary transition-all">Home</a></li>
+            <li><a href="" class="hover:text-primary transition-all">Blog</a></li>
+        </ul>
+
+        <button class="md:block hidden bg-primary px-5 py-2 rounded-full font-inter font-semibold">
+            Entrar em contato
+        </button>
+
+        <button class="border-divisor border-2 px-3 py-4 rounded-3xl md:hidden">
+            <img src="{{ asset('icons/hamburguer.png') }}" alt="">
+        </button>
+    </header>
+    <footer class="bg-dark-secondary py-8 px-5 md:px-20 md:pt-24 md:pb-16">
+        <div class="flex flex-col gap-12 md:flex-row md:justify-between md:mb-20">
+            <div class="md:flex">
+                <a href="{{ route('home') }}" class="md:mr-16" style="width: 31px; height: 35px">
+                    <img src="{{ asset('logo.png') }}" class="w-full" style="width: 31px; height: 35px" alt="">
+                </a>
+                <div class="flex justify-between mt-12 md:mt-0">
+                    <div class="md:mr-32">
+                        <h2 class="text-secondary text-xl font-inter">Páginas</h2>
+                        <div class="font-semibold flex flex-col">
+                            <a href="">Blog</a>
+                            <a href="">Início</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-secondary text-xl font-inter">Contato</h2>
+                        <div class="flex flex-col">
+                            <span class="font-normal"><span class="text-primary font-bold">Email:</span> dhom91718@gmail.com</span>
+                            <span class="font-normal"><span class="text-primary font-bold">Telefone:</span> (18) 99826-1800</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <h4>Contatos</h4>
-                    <p><i class="bi bi-envelope-fill"></i> dhom91718@gmail.com</p>
-                    <p><i class="bi bi-telephone-fill"></i> (18) 99826-1800</p>
+            </div>
+            <div class="md:hidden">
+                <hr class="border-divisor mb-7">
+                <p class="text-center">Desenvolvido por <span class="text-primary">Diego Henrique</span></p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h2 class="text-secondary text-xl font-inter mb-4">Redes Sociais</h2>
+                <div class="flex gap-3">
+                    <a href="" target="__blank" class="border p-2 border-primary rounded-full flex items-center justify-center">
+                        <img src="{{ asset('icons/github.svg') }}" alt="">
+                    </a>
                 </div>
             </div>
-            <div class="text-center pt-4">
-                Desenvolvido por <span class="fw-bold">Diego Henrique</span>.
-            </div>
+        </div>
+        <div class="md:block hidden">
+            <hr class="border-divisor mb-7">
+            <p class="text-center">Desenvolvido por <span class="text-primary">Diego Henrique</span></p>
         </div>
     </footer>
 </body>
