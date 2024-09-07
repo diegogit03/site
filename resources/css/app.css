@@ -9,3 +9,11 @@
 .font-inter {
     font-family: Inter;
 }
+
+@layer utilities {
+    .bg-grid-pattern {
+      background-image: linear-gradient(#e5e7eb20 1px, transparent 1px),
+                        linear-gradient(to right, #e5e7eb20 1px, transparent 1px);
+      background-size: 120px 120px;
+    }
+}

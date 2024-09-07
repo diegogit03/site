@@ -30,6 +30,9 @@
             <img src="{{ asset('icons/hamburguer.png') }}" alt="">
         </button>
     </header>
+    <main>
+        @yield('content')
+    </main>
     <footer class="bg-dark-secondary py-8 px-5 md:px-20 md:pt-24 md:pb-16">
         <div class="flex flex-col gap-12 md:flex-row md:justify-between md:mb-20">
             <div class="md:flex">
